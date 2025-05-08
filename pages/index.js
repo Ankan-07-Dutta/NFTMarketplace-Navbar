@@ -1,9 +1,15 @@
 import React from "react";
 
-const index = () => {
+//INTERNAL IMPORT
+import Style from "../styles/index.module.css"
+import { HeroSection } from "../components/componentIndex";
+
+const Home = () => {
   return(
-    <div>Home</div>
+    <div className={Style.homePage}>
+      <HeroSection />
+    </div>
   ); 
 };
 
-export default index;
+export default Home;
