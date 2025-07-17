@@ -16,6 +16,7 @@
 .heroSection_box_left h1{
     font-size: 5rem;
     line-height: 1;
+    color: var(--icons-color);
 }
 
 .heroSection_box_left p{
