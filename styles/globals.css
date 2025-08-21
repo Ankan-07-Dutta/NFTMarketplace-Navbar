@@ -25,6 +25,10 @@ body {
   font-size: 14px;
   background-color: var(--main-bg-color);
   color: var(--icons-color);
+
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
 }
 
 a {
