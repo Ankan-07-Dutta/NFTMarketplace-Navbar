@@ -19,7 +19,7 @@ const Subscribe = () => {
             </div>
             <div className={Style.subscribe_box_left_box}>
                 <span>02</span>
-                <small>Get Premuim magazines</small>
+                <small>Get Premium magazines</small>
             </div>
 
             <div className={Style.subscribe_box_left_input}>

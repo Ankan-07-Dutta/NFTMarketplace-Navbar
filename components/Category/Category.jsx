@@ -19,7 +19,7 @@ const Category = () => {
                             alt='Background image'
                             width={350}
                             height={150}
-                            objectFit='cover' />
+                            style={{ objectFit: "cover" }}/>
                         <div className={Style.category_box_title}>
                             <span>
                                 <BsCircleFill />

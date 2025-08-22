@@ -23,7 +23,9 @@ const HeroSection = () => {
                 src={images.hero}
                 alt='Hero Section'
                 width={600}
-                height={600} />
+                height={600}
+                priority
+                 />
         </div>
       </div>
     </div>
