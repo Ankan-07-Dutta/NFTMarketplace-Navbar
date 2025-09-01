@@ -14,31 +14,32 @@ const DaysComponents = () => {
           <Image src={images.creatorbackground1}
           className={Style.daysComponent_box_img_img} 
           alt='profile background'
-          width={500}
+          width={465}
           height={300}
-          objectFit='cover'/>
+          style={{ objectFit: "cover" }}
+          />
         </div>
 
         <div className={Style.daysComponent_box_profile}>
             <Image src={images.creatorbackground2}
             alt='profile'
-            width={200}
-            height={200}
-            objectFit='cover'
+            width={150}
+            height={150}
+            style={{ objectFit: "cover" }}
             className={Style.daysComponent_box_img_1}/>
 
             <Image src={images.creatorbackground2}
             alt='profile'
-            width={200}
-            height={200}
-            objectFit='cover'
+            width={150}
+            height={150}
+            style={{ objectFit: "cover" }}
             className={Style.daysComponent_box_img_2}/>
 
             <Image src={images.creatorbackground2}
             alt='profile'
-            width={200}
-            height={200}
-            objectFit='cover'
+            width={150}
+            height={150}
+            style={{ objectFit: "cover" }}
             className={Style.daysComponent_box_img_3}/>
         </div>
 

@@ -12,12 +12,6 @@
     box-shadow: var(--box-shadow);
 }
 
-/* .daysComponent_box_img{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: .5rem;
-} */
 
 .daysComponent_box_img_img{
     border-radius: 1rem;
