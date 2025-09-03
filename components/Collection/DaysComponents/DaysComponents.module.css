@@ -1,10 +1,9 @@
-
+/* 
 .daysComponent{
  width: 100%;
  border-radius: 1rem;
  transition: all .3s ease-in;
  cursor: pointer;
- /* overflow: hidden; */
 }
 
 
@@ -83,4 +82,337 @@
 
 .daysComponent_box_title{
     padding: 1rem;
+} */
+
+/* DaysComponents.module.css */
+
+.days_component {
+  width: 100%;
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  background: var(--card-bg, #fff);
+  box-shadow: var(--card-shadow, 0 2px 8px rgba(0, 0, 0, 0.1));
+  overflow: hidden;
+  position: relative;
+}
+
+.days_component:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-hover, 0 12px 32px rgba(0, 0, 0, 0.15));
+}
+
+.days_component:focus {
+  outline: 2px solid var(--focus-color, #007bff);
+  outline-offset: 2px;
+}
+
+.days_component:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.days_component_box {
+  position: relative;
+  width: 100%;
+}
+
+/* Background Image */
+.background_image_wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.background_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.days_component:hover .background_image {
+  transform: scale(1.05);
+}
+
+/* Collection Preview Images */
+.collection_preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 2px; /* Remove any gap */
+}
+
+.collection_image_wrapper {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 10%;
+}
+
+.collection_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: .5rem;
+  border-radius: 10%;
+  transition: transform 0.3s ease;
+}
+
+.collection_image_wrapper:hover .collection_image {
+  transform: scale(1.1);
+}
+
+.image_1 {
+  border-bottom-left-radius: 0.5rem;
+}
+
+.image_3 {
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* Content Section */
+.component_content {
+  padding: 1.5rem;
+  background: var(--card-content-bg, #fff);
+}
+
+.component_header {
+  margin-bottom: 1rem;
+}
+
+.collection_title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary, #1a1a1a);
+  margin: 0;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+/* Creator Info */
+.creator_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.creator_profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0; /* Allow text to truncate */
+}
+
+.creator_avatar {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar_image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--avatar-border, #e5e7eb);
+}
+
+.creator_details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.creator_label {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #6b7280);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.creator_name_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.creator_name {
+  font-weight: 600;
+  color: var(--text-primary, #1a1a1a);
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.verified_icon {
+  color: var(--verified-color, #1d9bf0);
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+/* Price Info */
+.price_info {
+  flex-shrink: 0;
+}
+
+.price_label {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--price-color, #059669);
+  background: var(--price-bg, #ecfdf5);
+  border: 2px solid var(--price-border, #10b981);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.days_component:hover .price_label {
+  background: var(--price-bg-hover, #10b981);
+  color: white;
+}
+
+/* Loading and Error States */
+.days_component.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.days_component.error {
+  border: 2px solid var(--error-color, #ef4444);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .days_component {
+    border-radius: 0.75rem;
+  }
+
+  .background_image_wrapper {
+    height: 200px;
+  }
+
+  .component_content {
+    padding: 1rem;
+  }
+
+  .collection_title {
+    font-size: 1.125rem;
+  }
+
+  .creator_info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .creator_profile {
+    width: 100%;
+  }
+
+  .price_info {
+    align-self: flex-end;
+  }
+
+  .creator_name {
+    max-width: 150px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .background_image_wrapper {
+    height: 180px;
+  }
+
+  .component_content {
+    padding: 0.875rem;
+  }
+
+  .collection_title {
+    font-size: 1rem;
+  }
+
+  .avatar_image {
+    width: 28px;
+    height: 28px;
+  }
+
+  .creator_label {
+    font-size: 0.6875rem;
+  }
+
+  .creator_name {
+    font-size: 0.8125rem;
+    max-width: 120px;
+  }
+
+  .price_label {
+    font-size: 0.8125rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .days_component {
+    border: 2px solid var(--border-color, #000);
+  }
+
+  .price_label {
+    border-width: 3px;
+  }
+
+  .days_component:focus {
+    outline-width: 3px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .days_component {
+    transition: none;
+  }
+
+  .background_image {
+    transition: none;
+  }
+
+  .collection_image {
+    transition: none;
+  }
+
+  .days_component:hover {
+    transform: none;
+  }
+
+  .days_component:hover .background_image {
+    transform: none;
+  }
+
+  .collection_image_wrapper:hover .collection_image {
+    transform: none;
+  }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .days_component {
+    --card-bg: #1f2937;
+    --card-content-bg: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --avatar-border: #374151;
+    --price-color: #34d399;
+    --price-bg: #064e3b;
+    --price-border: #34d399;
+    --price-bg-hover: #34d399;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --card-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.4);
+  }
 }

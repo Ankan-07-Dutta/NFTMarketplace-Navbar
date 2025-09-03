@@ -1,8 +1,8 @@
-.collection{
+/* .collection{
     width: 100%;
     padding: 3rem 0;
     padding-bottom: 10rem;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -10,11 +10,19 @@
 }
 
 .collection_title{
-    width: 90%;
-    max-width: 1200px;
+    width: 80%;
+    /* max-width: 1200px; 
     margin: 0 auto;
     padding: 0 0 6rem 0;
     text-align: center;
+}
+
+.collection_box{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
 .collection_title h2{
@@ -50,13 +58,7 @@
     color: var(--icons-color);
 }
 
-.collection_box{
-    width: 80%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
+
 
 @media screen and (min-device-width: 320px) and
 (max-device-width: 425px){
@@ -90,4 +92,181 @@
     .collection_collections_btn button{
         font-size: .7rem;
     }
+} */
+
+
+/* Collection.module.css */
+
+.collection {
+  width: 100%;
+  padding: 3rem 0 10rem;
+}
+
+.collection_title {
+  width: min(80%, 1200px);
+  margin: 0 auto;
+  padding-bottom: 6rem;
+  text-align: center;
+}
+
+.collection_title h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 4rem;
+  color: var(--text-primary, #333);
+  font-weight: 700;
+}
+
+.collection_collections {
+  display: flex;
+  justify-content: center;
+}
+
+.collection_collections_btn {
+  background-color: var(--main-bg-color, #fff);
+  padding: 0.5rem 1rem;
+  border-radius: 4rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: var(--box-shadow, 0 4px 12px rgba(0, 0, 0, 0.1));
+  border: 1px solid var(--border-color, #e5e5e5);
+}
+
+.collection_collections_btn_item {
+  background-color: var(--icons-color, #666);
+  color: var(--main-bg-color, #fff);
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 4rem;
+  cursor: pointer;
+  border: 1px solid var(--icons-color, #666);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.collection_collections_btn_item:hover {
+  background-color: transparent;
+  color: var(--icons-color, #666);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.collection_collections_btn_item:focus {
+  outline: 2px solid var(--focus-color, #007bff);
+  outline-offset: 2px;
+}
+
+.collection_collections_btn_item.active {
+  background-color: var(--accent-color, #007bff);
+  color: white;
+  border-color: var(--accent-color, #007bff);
+}
+
+.collection_collections_btn_item.active:hover {
+  background-color: var(--accent-color-dark, #0056b3);
+  color: white;
+}
+
+.button_icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.collection_box {
+  width: min(80%, 1200px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .collection_title {
+    width: 90%;
+    padding-bottom: 4rem;
+  }
+
+  .collection_box {
+    width: 90%;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .collection_collections_btn {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .collection_collections_btn_item {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .collection_title h2 {
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .collection_title {
+    width: 90%;
+  }
+
+  .collection_box {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .collection_collections_btn_item {
+    font-size: 0.9rem;
+    padding: 0.9rem 1.3rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .collection_collections_btn_item {
+    border-width: 2px;
+  }
+  
+  .collection_collections_btn_item:focus {
+    outline-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .collection_collections_btn_item {
+    transition: none;
+  }
+  
+  .collection_collections_btn_item:hover {
+    transform: none;
+  }
+  
+  .collection_box {
+    animation: none;
+  }
 }
