@@ -16,5 +16,6 @@ import FollowerTab from "./FollowerTab/FollowerTab";
 export {
     Button, Footer, Navbar, HeroSection,
     Service, BigNFTSlider, Subscribe, Title,
-    Category, Filter, NFTCard, Collection
+    Category, Filter, NFTCard, Collection,
+    FollowerTab
 };
